@@ -5,11 +5,16 @@
 .ng-filter-list .ng-filter-txt {
   cursor:pointer;
   float:left;
+  padding-left:10px;
 }
 
-.ng-filter-list .ng-filter-txt:before,
+.ng-filter-list .ng-filter-txt:before {
+  margin:0;
+  margin-left:10px;
+}
 .ng-filter-list .ng-filter-txt:after {
-  margin:0 10px;
+  margin:0;
+  margin-left:10px;
 }
 .ng-filter-list .ng-filter-txt:after {
   content: '|';
@@ -20,6 +25,7 @@
 .ng-filter-list .ng-filter-txt:first-child:before {
   content:'|';
   margin-left:0;
+  margin-right:10px;
 }
 .ng-invisible {
   display:none;

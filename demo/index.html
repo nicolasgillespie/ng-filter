@@ -7,7 +7,7 @@
 		<meta name="keywords" content="Les tondeurs, tonte de pelouse, Tondeurs, aménagement paysagé, PAVÉ-UNI *produits Permacon, Pose de tourbe, plates-bandes, terrautage, fertilisation, taille de haies, irrigation, plantation de cèdres, déchaumage mécanique, aération mécanique, livraison de terre" />
 
 		<meta name="author" content="Nicolas Gillespie" />
-		<title>Javascript jQuery filter tool</title>
+		<title>NG | jQuery tools | Filter tool</title>
 
 		<link rel="stylesheet" media="all" href="ng.styles.css"></link>
 		<link rel="stylesheet" media="all" href="lib/ng-filter/ng.filter.min.css"></link>
@@ -20,14 +20,40 @@
 	<body>
 		<div id="container">
 			<header>
-				<h1>ng-filter</h1>
+				<h1>jQuery Tools</h1>
 			</header>
 			<div class="content">
-				<h2>Images</h2>
-				<div class="text">Here is a jQuery plugin to filter through a list of images and show only the ones you want.</div>
-				<div class="text">Click here for demo!</div>
+				<h1>NG Filter</h1>
+				<h2>Instruction</h2>
+				<div class="text">jQuery plugin to filter through a list of images and show only the ones you want.</div>
+				<div class="text">
+<textarea style="border:none;width:100%;height:350px;font-size:14px;" disabled>
+// Verify if the ng-filter.min.js file has been imported (it adds ng-filter true to the html.data)
+if($('html').data('ng-filter')!=null) {
+	// Class that contains the list of all images / div to filter
+	var img_list = $('.img_list');
+
+	// Call the NG_Filter function to initialize it
+	NG_Filter(img_list);
+}
+<h2>Live demo</h2>
+<div class="img_list">
+	<div class="box" rel="Peyto Lake,Summer">
+		<img src="images/peyto-lake-1.jpg" alt="Peyto Lake summer" />
+		<div class="img_desc">
+			<div class="title">Peyto Lake</div>
+			<div class="desc">Summer</div>
+		</div>
+	</div>
+</textarea>
+					</pre>
+				</div>
+				<h2>Download</h2>
+				<a class="link" href="https://github.com/nicolasgillespie/ng-filter" target="_blank">Github link</a>
+				<!-- <a class="link" href=""></a> -->
+				<h2>Live demo</h2>
 				<div class="img_list">
-					<div class="box" rel="Peyto Lake">
+					<div class="box" rel="Peyto Lake,Summer">
 						<img src="images/peyto-lake-1.jpg" alt="Peyto Lake summer" />
 						<div class="img_desc">
 							<div class="title">Peyto Lake</div>
@@ -48,19 +74,19 @@
 							<div class="desc">Winter</div>
 						</div>
 					</div>
-					<div class="box" rel="Castle Mountain">
+					<div class="box" rel="Castle Mountain,Summer">
 						<img src="images/castle-mountain.jpg" alt="Castle Mountain" />
 						<div class="img_desc">
 							<div class="title">Castle Mountain</div>
 						</div>
 					</div>
-					<div class="box" rel="Johnston Canyon">
+					<div class="box" rel="Johnston Canyon,Summer">
 						<img src="images/johnston-canyon.jpg" alt="Johnston Canyon" />
 						<div class="img_desc">
 							<div class="title">Johnston Canyon</div>
 						</div>
 					</div>
-					<div class="box" rel="Saddleback Pass">
+					<div class="box" rel="Saddleback Pass,Summer">
 						<img src="images/saddleback-pass.jpg" alt="Saddleback Pass" />
 						<div class="img_desc">
 							<div class="title">Saddleback Pass</div>

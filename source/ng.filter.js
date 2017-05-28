@@ -40,9 +40,14 @@ var NG_Filter = function(list, start_filter) {
         rel_array = rel_array.split(',');
 
         jQuery.each(rel_array, function(index) {
-          var inArray = jQuery.inArray(rel_array[index], filters);
+          var one_rel = rel_array[index];
+          if(one_rel.indexOf(' ') == 0) {
+            one_rel = one_rel.replace(' ', '');
+          }
+
+          var inArray = jQuery.inArray(one_rel, filters);
           if(inArray == -1) {
-            filters.push(rel_array[index]);
+            filters.push(one_rel);
           }
         });
 
@@ -93,7 +98,14 @@ var NG_Filter = function(list, start_filter) {
 
         $(list).children('.ng-filter-obj').each(function(index) {
           var img_cat = $(this).attr('data-filter');
-          img_cat = img_cat.split(',');
+
+          if(img_cat.indexOf(',') != -1) {
+            if(img_cat.indexOf(', ') != -1) {
+              img_cat = img_cat.split(', ');
+            } else {
+              img_cat = img_cat.split(',');
+            }
+          }
 
           if(img_cat != cat) {
             $(this).addClass('ng-invisible');
