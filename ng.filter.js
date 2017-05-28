@@ -1,8 +1,10 @@
+$('html').data('ng-filter', 'true');
+
 var NG_Filter = function(list, start_filter = null) {
   var _this = this;
 
   _this.construct = function() {
-    var exists =_this.objectsExist();
+    var exists = _this.objectsExist();
     var filters = new Array();
 
     if(exists) {
@@ -66,11 +68,16 @@ var NG_Filter = function(list, start_filter = null) {
 
     $(filter_list).addClass('ng-filter-list');
 
+    var filter_txt_all = document.createElement('div');
+
+    $(filter_txt_all).addClass('ng-filter-txt').attr('data-filter', 'all').prepend('Tous');
+    $(filter_list).append(filter_txt_all);
+
     while(filters.length > int) {
       var filter_value = filters[int];
       var filter_txt = document.createElement('div');
 
-      $(filter_txt).addClass('ng-filter-txt').html(filter_value);
+      $(filter_txt).addClass('ng-filter-txt').attr('data-filter', filter_value).html(filter_value);
       $(filter_list).append(filter_txt);
 
       int++;
@@ -85,10 +92,9 @@ var NG_Filter = function(list, start_filter = null) {
     $('.ng-filter-txt').each(function(index) {
 
       $(this).on('click', function(e){
-        var cat = $(this).html();
+        var cat = $(this).attr('data-filter');
 
         $(list).children('a').each(function(index) {
-          console.log($(this).attr('data-filter'));
           var img_cat = $(this).attr('data-filter');
           img_cat = img_cat.split(', ');
 
@@ -98,6 +104,9 @@ var NG_Filter = function(list, start_filter = null) {
             $(this).removeClass('ng-invisible');
           }
           if(jQuery.inArray(cat, img_cat) != -1) {
+            $(this).removeClass('ng-invisible');
+          }
+          if(cat == 'all') {
             $(this).removeClass('ng-invisible');
           }
         });
