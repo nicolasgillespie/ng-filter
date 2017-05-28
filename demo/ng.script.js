@@ -8,7 +8,7 @@ $(document).ready(function(){
 		var img_list = $('.img_list');
 
 		/* Call the NG_Filter function to initialize it */
-		NG_Filter(img_list);
+		NG_Filter(img_list, 'Winter');
 	}
 
 	function resize() {

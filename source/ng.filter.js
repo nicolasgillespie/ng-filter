@@ -94,6 +94,7 @@ var NG_Filter = function(list, start_filter) {
     $('.ng-filter-txt').each(function(index) {
 
       $(this).on('click', function(e){
+        $(this).addClass('ng-selected');
         var cat = $(this).attr('data-filter');
 
         $(list).children('.ng-filter-obj').each(function(index) {
@@ -121,6 +122,29 @@ var NG_Filter = function(list, start_filter) {
         });
       });
     });
+
+    if(start_filter != 'all') {
+      $(list).children('.ng-filter-obj').each(function(index) {
+        var img_cat = $(this).attr('data-filter');
+
+        if(img_cat.indexOf(',') != -1) {
+          if(img_cat.indexOf(', ') != -1) {
+            img_cat = img_cat.split(', ');
+          } else {
+            img_cat = img_cat.split(',');
+          }
+        }
+
+        if(img_cat != start_filter) {
+          $(this).addClass('ng-invisible');
+        } else if(img_cat == start_filter && $(this).hasClass('ng-invisible')) {
+          $(this).removeClass('ng-invisible');
+        }
+        if(jQuery.inArray(start_filter, img_cat) != -1) {
+          $(this).removeClass('ng-invisible');
+        }
+      });
+    }
   }
 
   _this.construct();

@@ -62,8 +62,10 @@ body .content {
   padding: 20px;
 }
 body .content h2 {
+	float:left;
   margin-bottom: 10px;
   margin-top: 20px;
+	width:100%;
 }
 body .content .text {
   margin-bottom: 10px;

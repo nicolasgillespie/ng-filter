@@ -24,33 +24,7 @@
 			</header>
 			<div class="content">
 				<h1>NG Filter</h1>
-				<h2>Instruction</h2>
 				<div class="text">jQuery plugin to filter through a list of images and show only the ones you want.</div>
-				<div class="text">
-<textarea style="border:none;width:100%;height:350px;font-size:14px;" disabled>
-// Verify if the ng-filter.min.js file has been imported (it adds ng-filter true to the html.data)
-if($('html').data('ng-filter')!=null) {
-	// Class that contains the list of all images / div to filter
-	var img_list = $('.img_list');
-
-	// Call the NG_Filter function to initialize it
-	NG_Filter(img_list);
-}
-<h2>Live demo</h2>
-<div class="img_list">
-	<div class="box" rel="Peyto Lake,Summer">
-		<img src="images/peyto-lake-1.jpg" alt="Peyto Lake summer" />
-		<div class="img_desc">
-			<div class="title">Peyto Lake</div>
-			<div class="desc">Summer</div>
-		</div>
-	</div>
-</textarea>
-					</pre>
-				</div>
-				<h2>Download</h2>
-				<a class="link" href="https://github.com/nicolasgillespie/ng-filter" target="_blank">Github link</a>
-				<!-- <a class="link" href=""></a> -->
 				<h2>Live demo</h2>
 				<div class="img_list">
 					<div class="box" rel="Peyto Lake,Summer">
@@ -110,6 +84,38 @@ if($('html').data('ng-filter')!=null) {
 							<div class="title">Chairlift</div>
 						</div>
 					</div>
+				</div>
+				<h2>Download</h2>
+				<a class="link" href="https://github.com/nicolasgillespie/ng-filter" target="_blank">Github link</a>
+				<h2>Instruction</h2>
+				<div class="text">
+					<ul>
+						<li>- Setup HTML so one div (.img_list) surrounds the list of elements you want to filter (.box).</li>
+						<li>- Add in the attribute rel="" the elements you want part of the filter list. You can put multiple by seperating them with a ','.</li>
+						<li>- Call the NG_Filter(container, init_filter) function from you JS file. You have to send the container (.img_list) and you can send the text of the filter you want selected first.</li>
+					</ul>
+				</div>
+
+				<div class="text">
+					<textarea style="border:none;width:100%;height:350px;font-size:14px;" disabled>
+// HTML example for a list of 2 images in the .img_list list
+<div class="img_list">
+	// The filter list will contain Peyto Lake and Summer.
+	<div class="box" rel="Peyto Lake,Summer"><img src="images/peyto-lake-1.jpg" alt="Peyto Lake summer" /></div>
+	// This rel attribute will add Winter to the filter list because Peyto Lake is already in it.
+	<div class="box" rel="Peyto Lake,Winter"><img src="images/peyto-lake-3.jpg" alt="Peyto Lake winter" /></div>
+</div>
+
+// Verify if the ng-filter.min.js file has been imported (it adds ng-filter true to the html.data)
+if($('html').data('ng-filter')!=null) {
+	// Class that contains the list of all images / div to filter
+	var img_list = $('.img_list');
+
+	// Call the NG_Filter function to initialize it
+	NG_Filter(img_list);
+}
+
+					</textarea>
 				</div>
 			</div>
 			<footer>
