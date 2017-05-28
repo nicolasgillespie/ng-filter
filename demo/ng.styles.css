@@ -71,6 +71,11 @@ body .content .text {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+body .content .link {
+	display:block;
+	float:left;
+	width:100%;
+}
 body .content .img_list {
   display: block;
   float: left;
