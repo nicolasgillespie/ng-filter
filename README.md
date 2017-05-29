@@ -5,4 +5,4 @@ jQuery plugin I made to filter through a list of images and show only the ones y
 You can see a live demo here: http://ng-filter.nicolasgillespie.com
 
 
-It is also used here: http://www.lestondeurs.com/fr/realisations.html
+It is also used here as an example: http://www.lestondeurs.nicolasgillespie.com/fr/realisations.html
