@@ -1,3 +1,4 @@
+/* ng.filter v1.0.1 | (c) Nicolas Gillespie */
 $('html').data('ng-filter', 'true');
 
 var NG_Filter = function(list, start_filter) {
@@ -87,6 +88,10 @@ var NG_Filter = function(list, start_filter) {
       int++;
     }
 
+      var clear_div = document.createElement('div');
+      $(clear_div).addClass('clearBoth')
+
+    $(list).prepend(clear_div);
     $(list).prepend(filter_list);
   }
 

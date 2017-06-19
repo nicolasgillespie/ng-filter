@@ -1,3 +1,4 @@
+/* ng.filter v1.0.1 | (c) Nicolas Gillespie */
 .ng-filter-list {
   width:100%;
 }
@@ -30,4 +31,8 @@
 .ng-invisible {
   display:none;
   visibility:hidden;
+}
+
+.clearBoth {
+  clear:both;
 }
